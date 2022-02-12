@@ -14,7 +14,6 @@ class DutieSpider(scrapy.Spider):
         node_list = response.xpath('//*[@id="thread_list"]/li')
         # 遍历节点列表，提取数据name、link
         for node in node_list:
-            # item = {}
             # 实例化
             item = BaidutieItem()
 
