@@ -8,5 +8,8 @@ import scrapy
 
 class DoubanFilmItem(scrapy.Item):
     # define the fields for your item here like:
-    # name = scrapy.Field()
+    name = scrapy.Field()
+    link = scrapy.Field()
+    counts = scrapy.Field()
+    description = scrapy.Field()
     pass

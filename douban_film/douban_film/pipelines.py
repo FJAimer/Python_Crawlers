@@ -6,8 +6,18 @@
 
 # useful for handling different item types with a single interface
 from itemadapter import ItemAdapter
+import json
 
 
 class DoubanFilmPipeline:
+    def __init__(self):
+        self.file = open('dbfilms.json', 'w')
+
     def process_item(self, item, spider):
+        item = dict(item)
+        str_data = json.dumps(item, ensure_ascii=False) + ',\n'
+        self.file.write(str_data)
         return item
+
+    def __del__(self):
+        self.file.close()
